@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: identity-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/identity_db
+    username: postgres
+    password: pass
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  security:
+    user:
+      # Tắt user mặc định của Spring Security
+      name: __disabled__
+      password: __disabled__
+
+server:
+  port: 8090
+
+logging:
+  level:
+    org.springframework.security: INFO
+    com.pharmacy.identityservice: DEBUG
